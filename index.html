@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            .container {
+                background: blue;
+                padding: 1em;
+            }
+            .row {
+                background: lightblue;
+                padding: 1em;
+                margin: 1em;
+            }
+            .col {
+                background: purple;
+                padding: 1em;
+            }
+            .s3 {
+                background: green;
+                padding: 1em;
+                margin: 1em;
+                display: inline-block;
+            }
+            .s6 {
+                margin: 1em 0;
+            }
+            p {
+                margin: 1em 0;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="click" class="but one">Click me</button>
+        <button id="hover" class="but one">Hover Me</button>
+
+        <div class="container" id="first">
+            container > div
+            <div id="something" class="row one">
+                row one > div
+                <div class="col s6">
+                    <h1>container > row one > col s6 > h1</h1>
+                    <p>container > row one > col s6 > p</p>
+                </div>
+                <div class="col s3">
+                    <h2>container > row one > col s3 > h2</h2>
+                    <p>container > row one > col s3 > p</p>
+                </div>
+                <div class="col s3">
+                    <p>container > row one > col s3 > p</p>
+                </div>
+            </div>
+            <div class="row two">
+                row two > div
+                <div class="col s6">
+                    <h1>container > row one > col s6 > h1</h1>
+                </div>
+                <div class="col s6">
+                    <h2>container > row one > col s6 > h2</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+        <script src="./option-o.js"></script>
+        <script src="./option-ext.js"></script>
+        <script>
+            ø('#click').click(function() {
+                console.log('click');
+            })
+            ø('#hover').hover(function() {
+                console.log('in');
+            }, function() {
+                console.log('out');
+            })
+            ø('#hover').click(function() {
+                console.log('CLICKED HOVERRRRRR');
+            })
+            console.log(ø.initialized)
+        </script>
+    </body>
+</html>
