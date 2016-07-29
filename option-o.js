@@ -1,5 +1,5 @@
 ( function(global) {
-    ø = function(id) {
+    H = function(id) {
         var elements = [],
             element, type;
         //o: ø
@@ -24,8 +24,8 @@
         }
         // var element = document.getElementById(id);
 
-        //Object for ø
-        function ø () {
+        //Object for H
+        function H () {
             this.element = elements;
             // this.initialized = true;
         }
@@ -33,7 +33,7 @@
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
         //SELECTION
-        ø.prototype.select = function(str) {
+        H.prototype.select = function(str) {
             var selected = [];
             if (str[0] == '#') {
                 elements = [];
@@ -58,9 +58,9 @@
                 }
                 elements = selected;
             }
-            return new ø();
+            return new H();
         }
-        ø.prototype.first = function(str) {
+        H.prototype.first = function(str) {
             if (str[0] == '#') {
                 elements = [];
                 var identifier = id.slice(1);
@@ -81,7 +81,7 @@
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
         //SCROLLING
-        ø.prototype.popTo = function(identifier) {
+        H.prototype.popTo = function(identifier) {
             var scroll = 0,
                 iden,
                 scrollToThis;
@@ -108,7 +108,7 @@
 
             return this;
         }
-        ø.prototype.scrollTo = function(identifier, duration) {
+        H.prototype.scrollTo = function(identifier, duration) {
             var start       = global.pageYOffset,
                 to          = 0,
                 distance    = 0,
@@ -171,7 +171,7 @@
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
         //EVENT LISTENERS
-        ø.prototype.click = function(callback) {
+        H.prototype.click = function(callback) {
             for (ele in elements) {
                 elements[ele].addEventListener("click", function() {
                     callback();
@@ -180,7 +180,7 @@
 
             return this;
         }
-        ø.prototype.hover = function(hovIn, hovOut) {
+        H.prototype.hover = function(hovIn, hovOut) {
             for (ele in elements) {
                 elements[ele].addEventListener("mouseover", function() {
                     hovIn();
@@ -196,7 +196,7 @@
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
         //CSS PROPERTIES, GET AND SET
-        ø.prototype.width = function(width) {
+        H.prototype.width = function(width) {
             for (ele in elements) {
                 if (width) {
                     if (typeof width === 'number') {
@@ -210,7 +210,7 @@
 
             return this;
         }
-        ø.prototype.height = function(height) {
+        H.prototype.height = function(height) {
             for (ele in elements) {
                 if (height) {
                     if (typeof height === 'number') {
@@ -224,7 +224,7 @@
             // console.log(elements[ele].offsetHeight);
             return this;
         }
-        ø.prototype.attr = function(attr, value) {
+        H.prototype.attr = function(attr, value) {
             for (ele in elements) {
                 if (value && typeof attr == 'string') {
                     elements[ele].style[attr] = value;
@@ -235,7 +235,7 @@
 
             return this;
         }
-        ø.prototype.background = function(background) {
+        H.prototype.background = function(background) {
             for (ele in elements) {
                 if (background) {
                     elements[ele].style.background = background;
@@ -249,6 +249,6 @@
 
         /////////////////////////////////////////////////
         /////////////////////////////////////////////////
-        return new ø();
+        return new H();
     }
 } (window) )
